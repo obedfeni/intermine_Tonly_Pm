@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --primary: 214 84% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 94%;
+    --accent-foreground: 222 47% 11%;
+
+    --border: 214 32% 89%;
+    --input: 214 32% 89%;
+    --ring: 214 84% 40%;
+
+    --success: 142 71% 35%;
+    --success-foreground: 0 0% 100%;
+    --warning: 25 95% 45%;
+    --warning-foreground: 0 0% 100%;
+    --danger: 0 72% 51%;
+    --danger-foreground: 0 0% 100%;
+
+    --radius: 0.65rem;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 40% 11%;
+    --card-foreground: 210 40% 96%;
+
+    --primary: 214 90% 60%;
+    --primary-foreground: 222 47% 8%;
+
+    --secondary: 222 30% 16%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 222 30% 16%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 222 30% 18%;
+    --accent-foreground: 210 40% 96%;
+
+    --border: 222 25% 20%;
+    --input: 222 25% 20%;
+    --ring: 214 90% 60%;
+
+    --success: 142 60% 45%;
+    --success-foreground: 222 47% 8%;
+    --warning: 30 90% 55%;
+    --warning-foreground: 222 47% 8%;
+    --danger: 0 72% 58%;
+    --danger-foreground: 222 47% 8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+}
+
+/* Subtle scrollbar styling for the fleet table */
+.scroll-thin::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 9999px;
+}
+
+/* Printing the PM schedule: hide everything on the page except the element
+   marked .print-area (the schedule table itself), so "Print" produces a
+   clean list rather than the sidebar/nav/buttons too. */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+  .print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,8 @@
+# Python dependencies for the /api/predict.py Vercel Function.
+# Deliberately NOT listing flask/fastapi/django here — Vercel auto-detects a
+# Python "framework preset" from these files, and a detected preset takes
+# over ALL routing (which would break the plain file-based /api/*.py
+# handler used here, and would also swallow the Next.js app). Keep this
+# file to only what the ML engine itself needs.
+numpy==1.26.4
+scikit-learn==1.5.2
