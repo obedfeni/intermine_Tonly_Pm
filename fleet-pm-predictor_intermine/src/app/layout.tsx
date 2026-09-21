@@ -9,8 +9,8 @@ import { LanguageProvider } from '@/components/LanguageProvider';
 // which means one less network dependency for your Vercel build to trip on.
 
 export const metadata: Metadata = {
-  title: 'Fleet PM Predictor',
-  description: 'Predictive preventive maintenance for EV truck fleets, powered by robust ML odometer-trend regression.',
+  title: 'Intermine Tonly Fleet PM Predictor And Scheduling',
+  description: '',
 };
 
 // The dashboard has nothing worth pre-rendering at build time — it's 100%
